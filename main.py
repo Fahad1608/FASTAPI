@@ -12,7 +12,7 @@ CLIENT_SECRET = "Q8E8Q~Yr9OSyT.0mG74uhwvz9xd4km4lTUoUMazT"
 
 # 📂 Hardcoded SharePoint Details
 SITE_ID = "liongard.sharepoint.com,30624ea5-37e8-4ae6-a3fa-948ef66cbeed,0936933d-88a8-45e4-980d-2e1c9adf2730"
-DRIVE_ID = "b!pU5iMOg35kqj-pSO9my-7T2TNgmoiORFmA0uHJrfJzCkLel8VkwAR4BEzi1g87A-"
+DRIVE_ID = "b!pU5iMOg35kqj-pSO9my-7T2TNgmoiORFmA0uHJrfJzBti9cplmEWTocEeg3o4UcQ"
 
 # 🔑 Token Endpoint
 TOKEN_URL = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token"
@@ -58,7 +58,7 @@ def upload_file(payload: FilePayload):
     binary_data = base64.b64decode(payload.fileContent)
 
     # 📂 Upload directly to ROOT
-    upload_url = f"https://graph.microsoft.com/v1.0/sites/{SITE_ID}/drives/{DRIVE_ID}/root:/{payload.fileName}:/content"
+    upload_url = f"https://graph.microsoft.com/v1.0/sites/{SITE_ID}/drives/{DRIVE_ID}/root:/NetSuite_Invoices/Invoices_Directory/{payload.fileName}:/content"
 
     headers = {
         "Authorization": f"Bearer {access_token}",
